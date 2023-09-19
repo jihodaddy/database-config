@@ -1,0 +1,28 @@
+server:
+  port: 8080
+
+spring:
+  h2:
+    console:
+      enabled: true
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: postgres
+    password: 12345
+    pool-name: template
+  jpa:
+    hibernate:
+      ddl-auto: update #create
+    properties:
+      hibernate:
+        format_sql: true
+        jdbc:
+          time_zone: Asia/Seoul
+    show-sql: true
+
+logging:
+  level:
+    org:
+      hibernate:
+        type: trace
